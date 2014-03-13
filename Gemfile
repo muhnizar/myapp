@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -54,4 +53,7 @@ group :test do
   gem 'capybara', '2.1.0'
 end
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
