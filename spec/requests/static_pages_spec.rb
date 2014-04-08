@@ -14,7 +14,7 @@ describe "StaticPages" do
     #it { should have_content('My App') }
     #it { should have_title(full_title('')) }
     
-    let(:heading) {'My App'}
+    let(:heading) {'Ruby on Us'}
     let(:page_title) {''}    
     it_should_behave_like "all static pages"
     
