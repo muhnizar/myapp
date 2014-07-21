@@ -1,5 +1,20 @@
-
- <div id="myCarousel" class="carousel slide">
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+     <div class="span8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+<div id="myCarousel" class="carousel slide">
   	<ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -16,10 +31,8 @@
   <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
-
-
- 
 <div class="center hero-unit">
   <h1>Welcome to the Ruby on Us website</h1>
   <%= link_to "Sign up now!", signup_path , class: "btn btn-large btn-primary" %>
 </div>
+<% end %>
